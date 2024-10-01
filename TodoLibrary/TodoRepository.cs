@@ -9,6 +9,7 @@ namespace TodoLibrary
 {
     public class TodoRepository
     {
+        private static int _count = 0;
 
         private readonly List<TodoItem> _items;
 
@@ -23,11 +24,19 @@ namespace TodoLibrary
                     IsCompleted = false,
                 }
             };
+
+            _count = 2;
         }
 
         public List<TodoItem> GetTodoItems() => _items;
 
-        public void Add(TodoItem item) => _items.Add(item);
+        public void CreateItem(TodoItem item)
+        {
+            item.Id = _count;
+            _count++;
+
+            _items.Add(item);
+        }
 
     }
 }
