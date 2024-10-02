@@ -1,0 +1,15 @@
+﻿@page
+@model TodoWebApp_CRUD.Pages.CreateModel
+
+<div class="card">
+    <div class="card-header"><i class="fa-solid fa-plus"></i> New item</div>
+    <div class="card-body">
+        <form method="post">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input asp-for="TodoName" type="text" class="form-control" id="name"placeholder="Enter todo name">
+            </div>
+            <button type="submit" class="btn btn-success mt-2"><i class="fa-solid fa-plus"></i> Create</button>
+        </form>
+    </div>
+</div>

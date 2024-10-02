@@ -8,9 +8,6 @@ builder.Services.AddSingleton<ITodoRepository,TodoRepository>();
 
 var app = builder.Build();
 
-var repo = app.Services.GetRequiredService<ITodoRepository>();
-repo.CreateTodoItem(new TodoLibrary.Objects.TodoItem { Name = "Do something on startup", Created = DateTime.Now, IsCompleted = false });
-
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {

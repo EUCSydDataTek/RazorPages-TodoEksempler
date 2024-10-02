@@ -1,0 +1,33 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+
+    string formatState(bool state)
+    {
+        if (state)
+        {
+            return "text-decoration: line-through;";
+        }
+        else
+        {
+            return "";
+        }
+    }
+}
+
+<a asp-page="create" class="btn btn-sm btn-primary mb-3"><i class="fa-solid fa-plus"></i> New item</a>
+
+<ul class="list-group">
+   
+    @foreach (var item in Model.Items)
+    {
+        <li class="list-group-item">
+            <a asp-route-id="@item.Id" asp-page-handler="CompleteTrigger" style="@formatState(item.IsCompleted)" class="btn" asp-route-state="@(!item.IsCompleted)">@item.Name</a>
+            <a class="btn float-end" asp-page="edit" asp-route-TodoId="@item.Id"><i class="fa-solid fa-pen-to-square"></i></a>
+            <a class="btn float-end" asp-page="delete" asp-route-TodoId="@item.Id"><i class="fa-solid fa-trash text-danger"></i></a>
+        </li>
+    }
+</ul>
+
+

@@ -1,0 +1,10 @@
+﻿@page "{TodoId}"
+@model TodoWebApp_CRUD.Pages.DeleteModel
+
+<h3>Are you sure?</h3>
+<h4>Delete @Model.TodoItem.Name</h4>
+
+<div class="btn-group" role="group">
+    <a asp-page-handler="Confirm" class="btn btn-danger" >Yes</a>
+    <a asp-page="index" class="btn btn-secondary">no</a>
+</div>

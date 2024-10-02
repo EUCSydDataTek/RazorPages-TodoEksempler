@@ -1,0 +1,19 @@
+﻿@page "{TodoId}"
+@model TodoWebApp_CRUD.Pages.EditModel
+
+<div class="card">
+    <div class="card-header"><i class="fa-solid fa-pen-to-square"></i> Edit item</div>
+    <div class="card-body">
+        <form method="post">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input asp-for="form.Name" value="@Model.Item.Name" type="text" class="form-control" id="name" placeholder="Enter todo name">
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" asp-for="form.IsCompleted" value="@Model.Item.IsCompleted">
+                <label class="form-check-label">Completed</label>
+            </div>
+            <button type="submit" class="btn btn-success mt-2"><i class="fa-solid fa-pen-to-square"></i> edit</button>
+        </form>
+    </div>
+</div>
