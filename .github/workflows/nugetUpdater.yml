@@ -1,0 +1,16 @@
+name: Nuget-Updater
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install nuget
+        uses: jako5457/GhaTemplates/.github/workflows/NugetSetup.yml@main
+        with:
+          dotnet-version: 9.x
+      - name: update packages
+        run: nuget update RazorPagesTodoEksempel.sln -NonInteractive 
