@@ -6,9 +6,9 @@ on:
 jobs:
   Update-nuget:
     runs-on: ubuntu-latest
-   
+    
     steps:
-      - uses: jako5457/GhaTemplates/.github/workflows/NugetSetup.yml@main
+      - uses: jako5457/GhaTemplates/.github/actions/NugetSetup.yml@main
         with:
           dotnet-version: 9.x
       - run: nuget update RazorPagesTodoEksempel.sln -NonInteractive 
